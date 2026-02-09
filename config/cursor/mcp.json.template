@@ -1,0 +1,45 @@
+{
+  "mcpServers": {
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    },
+    "sequentialthinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+    },
+    "perplexity-ask": {
+      "command": "npx",
+      "args": ["-y", "@perplexity-ai/mcp-server"],
+      "env": {
+        "PERPLEXITY_API_KEY": "<your-perplexity-api-key>"
+      }
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"]
+    },
+    "fetch": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "mcp/fetch"]
+    },
+    "git": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-v", "C:/Users/<your-username>:/user", "mcp/git"]
+    },
+    "github-official": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN", "ghcr.io/github/github-mcp-server"]
+    },
+    "notion": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-e", "NOTION_API_KEY=<your-notion-api-key>", "mcp/notion"]
+    },
+    "vercel": {
+      "url": "https://mcp.vercel.com"
+    },
+    "figma": {
+      "url": "https://mcp.figma.com/mcp"
+    }
+  }
+}
